@@ -16,6 +16,7 @@ namespace AddressBook
             book.EditContact();
             Console.WriteLine("\n");
             book.Display();
+            book.DeleteContact();
         }
     }
 }

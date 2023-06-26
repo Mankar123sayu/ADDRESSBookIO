@@ -107,8 +107,36 @@ namespace AddressBookIo
                     break;
             }
         }
+        public void DeleteContact()
+        {
+            Console.WriteLine("Enter wheather you want to delete or not: \n 1.yes \n 2.no");
+            int del = Convert.ToInt32(Console.ReadLine());
+
+            switch (del)
+            {
+                case 1:
+                    Console.WriteLine("Enter first name to delete contact:  ");
+                    string word = Console.ReadLine();
+
+                    foreach (var data in main)
+                    {
+                        if (data.FirstName == word)
+                        {
+                            contact = data;
+                        }
+                    }
+                    main.Remove(contact);
+                    Console.WriteLine("\nContact Sucessfully deleted \n");
+                    break;
+                default:
+                    Console.WriteLine(contact.FirstName + "\n" + contact.LastName + "\n" + contact.Address + "\n" + contact.City + "\n" + contact.State + "\n" + contact.Zip + "\n" + contact.PhoneNumber + "\n" + contact.Email);
+                    break;
+            }
+        }
     }
 }
+    
+
     
 
 
