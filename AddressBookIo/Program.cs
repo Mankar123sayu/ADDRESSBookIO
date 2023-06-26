@@ -48,7 +48,9 @@ namespace AddressBook
                 Console.WriteLine("9. Sort contacts by Zip");
                 Console.WriteLine("10. Save address book to file");
                 Console.WriteLine("11. Load address book from file");
-                Console.WriteLine("12. Exit");
+                Console.WriteLine("12. Save address book to CSV");
+                Console.WriteLine("13. Load address book from CSV");
+                Console.WriteLine("14. Exit");
                 Console.WriteLine("Enter your choice:");
 
                 int choice;
