@@ -40,7 +40,8 @@ namespace AddressBook
                 Console.WriteLine("1. Create address book");
                 Console.WriteLine("2. Add contact");
                 Console.WriteLine("3. Display all contacts");
-                Console.WriteLine("4. Exit");
+                Console.WriteLine("4. Search person in a city or state");
+                Console.WriteLine("5. Exit");
                 Console.WriteLine("Enter your choice:");
 
                 int choice;
