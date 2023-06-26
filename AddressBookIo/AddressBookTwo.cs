@@ -211,8 +211,38 @@ namespace AddressBookIo
                 Console.WriteLine("----------------------------------");
             }
         }
+        public void SortContactsByState()
+        {
+            List<Contact> allContacts = addressBooks.SelectMany(ab => ab.Contacts).ToList();
+            allContacts = allContacts.OrderBy(c => c.State).ToList();
+
+            Console.WriteLine("Sorted contacts by state:");
+            Console.WriteLine("----------------------------------");
+
+            foreach (var contact in allContacts)
+            {
+                Console.WriteLine(contact);
+                Console.WriteLine("----------------------------------");
+            }
+        }
+        public void SortContactsByZip()
+        {
+            List<Contact> allContacts = addressBooks.SelectMany(ab => ab.Contacts).ToList();
+            allContacts = allContacts.OrderBy(c => c.Zip).ToList();
+
+            Console.WriteLine("Sorted contacts by ZIP:");
+            Console.WriteLine("----------------------------------");
+
+            foreach (var contact in allContacts)
+            {
+                Console.WriteLine(contact);
+                Console.WriteLine("----------------------------------");
+            }
+        }
     }
 }
+    
+
     
 
     
