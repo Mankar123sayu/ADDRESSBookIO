@@ -10,13 +10,24 @@ namespace AddressBook
             Console.WriteLine("Welcome to Address Book I/O");
 
             AddressBookMain book = new AddressBookMain();
-            book.Addcontact();
-            Console.WriteLine("\n");
-            book.Display();
-            book.EditContact();
-            Console.WriteLine("\n");
-            book.Display();
-            book.DeleteContact();
+            Console.Write("Enter the number of contact you want to save: ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 1; i <= num; i++)
+            {
+                book.Addcontact();
+                Console.WriteLine("\n");
+                book.Display();
+                Console.WriteLine("\n");
+            }
         }
+        /*
+           Console.WriteLine("\n");
+           book.EditContact();
+           Console.WriteLine("\n");
+           book.Display();
+           Console.WriteLine("\n");
+           book.DeleteContact();
+           */
     }
 }
