@@ -158,8 +158,49 @@ namespace AddressBookIo
                 Console.WriteLine($"No results found for '{searchQuery}'.");
             }
         }
+        public void ViewPersonsByCityOrState()
+        {
+            Console.WriteLine("Enter the city or state to view persons:");
+            string searchQuery = Console.ReadLine();
+
+            List<Contact> searchResults = new List<Contact>();
+
+            foreach (var addressBook in addressBooks)
+            {
+                foreach (var contact in addressBook.Contacts)
+                {
+                    if (contact.City.Equals(searchQuery, StringComparison.OrdinalIgnoreCase) ||
+                        contact.State.Equals(searchQuery, StringComparison.OrdinalIgnoreCase))
+                    {
+                        searchResults.Add(contact);
+                    }
+                }
+            }
+            if (searchResults.Count > 0)
+            {
+                Console.WriteLine($"Persons in '{searchQuery}':");
+                Console.WriteLine("----------------------------------");
+                foreach (var contact in searchResults)
+                {
+                    Console.WriteLine($"Name: {contact.FirstName} {contact.LastName}");
+                    Console.WriteLine($"Address: {contact.Address}");
+                    Console.WriteLine($"City: {contact.City}");
+                    Console.WriteLine($"State: {contact.State}");
+                    Console.WriteLine($"ZIP: {contact.Zip}");
+                    Console.WriteLine($"Phone: {contact.PhoneNumber}");
+                    Console.WriteLine($"Email: {contact.Email}");
+                    Console.WriteLine("----------------------------------");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"No persons found in '{searchQuery}'.");
+            }
+        }
     }
 }
+    
+
     
 
     

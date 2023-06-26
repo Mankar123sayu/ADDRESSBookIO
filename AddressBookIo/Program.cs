@@ -41,7 +41,8 @@ namespace AddressBook
                 Console.WriteLine("2. Add contact");
                 Console.WriteLine("3. Display all contacts");
                 Console.WriteLine("4. Search person in a city or state");
-                Console.WriteLine("5. Exit");
+                Console.WriteLine("5. View Person by entering city or state");
+                Console.WriteLine("6. Exit");
                 Console.WriteLine("Enter your choice:");
 
                 int choice;
