@@ -197,8 +197,24 @@ namespace AddressBookIo
                 Console.WriteLine($"No persons found in '{searchQuery}'.");
             }
         }
+        public void SortContactsByName()
+        {
+            List<Contact> allContacts = addressBooks.SelectMany(ab => ab.Contacts).ToList();
+            allContacts.Sort();
+
+            Console.WriteLine("Sorted contacts by name:");
+            Console.WriteLine("----------------------------------");
+
+            foreach (var contact in allContacts)
+            {
+                Console.WriteLine(contact);
+                Console.WriteLine("----------------------------------");
+            }
+        }
     }
 }
+    
+
     
 
     
